@@ -7,6 +7,7 @@ Welcome to the official documentation for https://hngx.kasyoki.africa/api/. This
 ## Table of Contents
 
 - [Installation](#installation)
+- [UML Design](#designs)
 - [API Endpoints and Examples](#api-endpoints)
 - [Limitations](#limitations)
 
@@ -20,6 +21,16 @@ Welcome to the official documentation for https://hngx.kasyoki.africa/api/. This
 6. Install requirements `pipenv install`
 7. Create database tables `python manage.py migrate`
 8. Run the API `python manage.py runserver`
+
+## UML Design
+
+### Person Entity
+
+![The Entity Diagram of the Person Object](../UML/person_entity.png)
+
+### App Design
+
+![An Image of the Person API Class Components Designs](../UML/person_api.drawio.png)
 
 ## API Endpoints and Examples
 
@@ -68,6 +79,10 @@ Sections show the URL, and method type accepted
   {"id": 1, "name": "Person Name" }
   ```
 - DELETE Response (Success : 204)
+
+## Testing
+
+- A testing python script is provided for the https://hngx.kasyoki.africa/api/ endpoint. To run it in a localhost environment, use the test_localhost.py file.
 
 ## Limitations
 
