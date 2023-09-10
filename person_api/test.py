@@ -49,5 +49,6 @@ if __name__ == '__main__':
     update_person_record_name('John', 'John Doe')
     get_person_record_by_name('John Doe')
     delete_person_record_by_name('John Doe')
+    delete_person_record_by_name('Alice')
     get_all_person_records()
 
