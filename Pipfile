@@ -5,14 +5,8 @@ name = "pypi"
 
 [packages]
 djangorestframework = "*"
-python-decouple = "*"
-drf-nested-routers = "*"
-django-filter = "*"
-drf-yasg = "*"
 gunicorn = "*"
-psycopg2-binary = "*"
-django-phonenumber-field = "*"
-phonenumbers = "*"
+requests = "*"
 
 [requires]
-python_version = "3.10"
+python_version = "3.11"
