@@ -12,3 +12,7 @@
 
 Read the documentation file at:
 https://github.com/collinskasyoki/hngx2/blob/main/person_api/DOCUMENTATION.md
+
+# Test script
+
+- A testing python script is provided for the https://hngx.kasyoki.africa/api/ endpoint. To run it in a localhost environment, use the test_localhost.py file.

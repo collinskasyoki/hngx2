@@ -1,6 +1,6 @@
 import requests
 
-base_url = 'https://hngx.kasyoki.africa/api/' # Update this as necessary if running in a public facing server
+base_url = 'http://localhost:8000/api/' # Update this as necessary if running in a public facing server
 
 # Function to print response content
 def print_response(response):
