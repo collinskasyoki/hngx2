@@ -11,4 +11,4 @@
 # Read the Documentation
 
 Read the documentation file at:
-https://github.com/collinskasyoki/person_api/person_api/DOCUMENTATION.md
+https://github.com/collinskasyoki/hngx2/blob/main/person_api/DOCUMENTATION.md

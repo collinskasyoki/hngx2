@@ -2,22 +2,24 @@
 
 ## Introduction
 
-Welcome to the official documentation for https://hngx.kasyoki.africa/api/. This API is built on Django. This document provides an overview of the key features, installation instructions, usage guidelines, and other important information about the app.
+Welcome to the official documentation for https://hngx.kasyoki.africa/api/. This API is built on Django and uses an SQLite database. This document provides an overview of the key features, installation instructions, usage guidelines, and other important information about the app.
 
 ## Table of Contents
 
 - [Installation](#installation)
 - [API Endpoints and Examples](#api-endpoints)
-- [Limitations] (#limitations)
+- [Limitations](#limitations)
 
 ## Installation
 
 1. Clone the repo
-2. Install pipenv to your environment
-3. Create a virtual env with `pipenv shell`
-4. Install requirements `pipenv install`
-5. Create database tables `python manage.py migrate`
-6. Run the API `python manage.py runserver`
+2. Install pip into your environment
+3. Install pipenv using pip `pip install pipenv`
+4. Change directory to the person_api directory. For linux `cd person_api`
+5. Create a virtual env with `pipenv shell`
+6. Install requirements `pipenv install`
+7. Create database tables `python manage.py migrate`
+8. Run the API `python manage.py runserver`
 
 ## API Endpoints and Examples
 
