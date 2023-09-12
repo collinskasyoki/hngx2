@@ -61,6 +61,8 @@ Sections show the URL, and method type accepted
 
 ### `/api/<int:user_id>/` [GET, PUT, DELETE]
 
+This endpoint uses the user_id of the Person resource, which must be an integer.
+
 #### GET
 
 - For the GET, returns the id and name of the resource in the format
