@@ -18,7 +18,7 @@ class PersonViewSet(APIView):
 
                 return JsonResponse(serializer.data)
             except Person.DoesNotExist:
-                return JsonResponse({'detail': 'This Person Cannot be Found'}, status=status.HTTP_404_NOT_FOUND)
+                return JsonResponse(json.dumps({'detail': 'This Person Cannot be Found'}), status=status.HTTP_404_NOT_FOUND, safe=False)
         else:
             people = Person.objects.all()
             serializer = PersonSerializer(people, many=True)
@@ -37,7 +37,7 @@ class PersonViewSet(APIView):
         try:
             person = Person.objects.get(id=user_id)
         except Person.DoesNotExist:
-            return JsonResponse(status=status.HTTP_404_NOT_FOUND)
+            return JsonResponse(json.dumps({'detail': 'This Person Cannot be Found'}), status=status.HTTP_404_NOT_FOUND, safe=False)
         
         serializer = PersonSerializer(person, data=request.data)
         if serializer.is_valid():
@@ -45,6 +45,17 @@ class PersonViewSet(APIView):
             return JsonResponse(serializer.data, status=status.HTTP_200_OK)
         return JsonResponse(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+    def patch(self, request, user_id):
+        try:
+            person = Person.objects.get(id=user_id)
+        except Person.DoesNotExist:
+            return JsonResponse(json.dumps({'detail': 'This Person Cannot be Found'}), status=status.HTTP_404_NOT_FOUND, safe=False)
+        
+        serializer = PersonSerializer(person, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return JsonResponse(serializer.data, status=status.HTTP_200_OK)
+        return JsonResponse(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def delete(self, request, *args, **kwargs):
         if 'user_id' in kwargs:
@@ -54,7 +65,7 @@ class PersonViewSet(APIView):
                 
                 return Response(status=status.HTTP_204_NO_CONTENT)
             except Person.DoesNotExist:
-                return JsonResponse({'detail': 'This Person Cannot be Found'}, status=status.HTTP_404_NOT_FOUND)
+                return JsonResponse(json.dumps({'detail': 'This Person Cannot be Found'}), status=status.HTTP_404_NOT_FOUND, safe=False)
         else:
-            return JsonResponse({'detail': 'This Person Cannot be Found'}, status=status.HTTP_404_NOT_FOUND)
+            return JsonResponse(json.dumps({'detail': 'This Person Cannot be Found'}), status=status.HTTP_404_NOT_FOUND, safe=False)
             
