@@ -7,5 +7,5 @@ from .views import PersonViewSet
 
 urlpatterns = [
     path('api/', PersonViewSet.as_view(), name='person-list'),
-    path('api/<str:name>/', PersonViewSet.as_view(), name='person-detail')
+    path('api/<int:user_id>/', PersonViewSet.as_view(), name='person-detail')
 ]
